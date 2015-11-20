@@ -1,0 +1,14 @@
+## Configuration file for bubba-status
+## Default values are shown commented, fell free
+## to uncomment and adjust them to your needs
+
+## Reboot blink frequency used when rebooting/halting the Bubba|2
+## Possible values are :
+## slower  (49152)
+## slow    (32768)
+## normal  (16384)
+## fast    (8192)
+## faster  (4096)
+## <custom numeric value between 2048 and 65535>
+
+#B2_REBOOT_FREQ=fast

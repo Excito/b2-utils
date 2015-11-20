@@ -1,0 +1,48 @@
+#!/bin/bash
+
+D_MODE=/sys/devices/platform/bubbatwo/ledmode
+D_FREQ=/sys/devices/platform/bubbatwo/ledfreq
+
+F_SLOWER=49152
+F_SLOW=32768
+F_NORMAL=16384
+F_FAST=8192
+F_FASTER=4096
+
+if ! [ $(id -u) = 0 ]; then
+   echo "b2-set-led must be run as root" 1>&2
+   exit 1
+fi
+
+case "$1" in
+lit)
+	echo lit > $D_MODE
+	;;
+slower)
+	echo $F_SLOWER > $D_FREQ
+	echo blink > $D_MODE
+	;;
+slow)
+	echo $F_SLOW > $D_FREQ
+	echo blink > $D_MODE
+	;;
+normal)
+	echo $F_NORMAL > $D_FREQ
+	echo blink > $D_MODE
+	;;
+fast)
+	echo $F_FAST > $D_FREQ
+	echo blink > $D_MODE
+	;;
+faster)
+	echo $F_FASTER > $D_FREQ
+	echo blink > $D_MODE
+	;;
+[0-9]+)
+	echo $1 > $D_FREQ
+	echo blink > $D_MODE
+	;;
+*)
+	echo "Usage: b2-set-led [lit|slower|slow|normal|fast|faster]"
+	;;
+esac

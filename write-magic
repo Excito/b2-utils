@@ -1,0 +1,5 @@
+#!/bin/bash
+
+BUBBA_MAGIC=${1:-0xdeadbeef}
+
+echo $BUBBA_MAGIC > /sys/devices/platform/bubbatwo/magic
