@@ -4,8 +4,8 @@ Description=B3 status led service (start/shutdown)
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-ExecStart=/usr/sbin/b2-set-led lit
-ExecStop=/usr/sbin/b2-set-led fast
+ExecStart=/usr/sbin/bubbatwo-set-led lit
+ExecStop=/usr/sbin/bubbatwo-set-led fast
 
 [Install]
 WantedBy=multi-user.target

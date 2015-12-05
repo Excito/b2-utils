@@ -1,6 +1,6 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: b2-utils
-Source: https://github.com/Excito/b3-utils
+Upstream-Name: bubbatwo-utils
+Source: https://github.com/Excito/bubbatwo-utils
 
 Files: *
 Copyright: 2015 Charles Leclerc <leclerc.charles@gmail.com>

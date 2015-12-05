@@ -11,4 +11,4 @@
 ## faster  (4096)
 ## <custom numeric value between 2048 and 65535>
 
-#B2_REBOOT_FREQ=fast
+#BUBBATWO_REBOOT_FREQ=fast

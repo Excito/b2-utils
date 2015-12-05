@@ -12,9 +12,9 @@
 
 # Do NOT "set -e"
 
-[ -x /usr/sbin/b2-set-led ] || exit 0
+[ -x /usr/sbin/bubbatwo-set-led ] || exit 0
 
-B2_REBOOT_FREQ=fast
+BUBBATWO_REBOOT_FREQ=fast
 
 if test -f /etc/default/bubba-status; then
     . /etc/default/bubba-status
@@ -25,12 +25,12 @@ fi
 case "$1" in
 	start|restart|force-reload)
 		log_begin_msg "Setting LED status (running)"
-		/usr/sbin/b2-set-led lit
+		/usr/sbin/bubbatwo-set-led lit
 		log_end_msg 0
 		;;
 	stop)
 		log_begin_msg "Setting LED status (reboot/halt)"
-		/usr/sbin/b2-set-led $B2_REBOOT_FREQ
+		/usr/sbin/bubbatwo-set-led $BUBBATWO_REBOOT_FREQ
 		log_end_msg 0
 		;;
 	*)
